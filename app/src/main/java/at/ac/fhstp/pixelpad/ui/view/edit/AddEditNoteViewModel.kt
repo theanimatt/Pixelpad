@@ -83,7 +83,7 @@ class AddEditNoteViewModel @Inject constructor(
                         content = _noteContent.value.stateText,
                         timestamp = System.currentTimeMillis(),
                         color = _noteColor.value,
-                        id = currentNoteId
+                        id = currentNoteId,
                     )
                 )
                 _eventFlow.emit(UiEvent.SaveNote)

@@ -2,6 +2,7 @@ package at.ac.fhstp.pixelpad.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import at.ac.fhstp.pixelpad.domain.util.NoteOrder
 import at.ac.fhstp.pixelpad.ui.theme.*
 
 @Entity(tableName = "note")

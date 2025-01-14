@@ -17,6 +17,9 @@ import androidx.navigation.NavController
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -29,6 +32,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.core.graphics.ColorUtils
@@ -37,6 +42,14 @@ import at.ac.fhstp.pixelpad.data.model.Note
 import at.ac.fhstp.pixelpad.ui.component.OrderSection
 import at.ac.fhstp.pixelpad.ui.navigation.NoteScreen
 import at.ac.fhstp.pixelpad.ui.theme.Background
+
+val titleFont = FontFamily(
+    Font(R.font.pixelmania)
+)
+
+val textFont = FontFamily(
+    Font(R.font.pixeled)
+)
 
 @Composable
 fun NoteListScreen(
@@ -53,16 +66,13 @@ fun NoteListScreen(
             Box(
                 modifier = Modifier
                     .size(50.dp)
-                    .background(Color.White, shape = CircleShape)
                     .clickable {
                         navController.navigate(NoteScreen.AddEditNoteScreen.route)
                     },
             ) {
                 Icon(
-                    painter = painterResource(id = R.drawable.baseline_add_24),
-                    contentDescription = "Add",
-                    modifier = Modifier.fillMaxSize(),
-                    tint = MaterialTheme.colorScheme.onSurface
+                    painter = painterResource(id = R.drawable.add),
+                    contentDescription = "Add"
 
                 )
             }
@@ -80,8 +90,9 @@ fun NoteListScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Scribbly",
-                    style = MaterialTheme.typography.headlineMedium
+                    text = "PIXELPAD",
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontFamily = titleFont
                 )
                 IconButton(
                     onClick = {
@@ -89,7 +100,7 @@ fun NoteListScreen(
                     },
                 ) {
                     Icon(
-                        painter = painterResource(id = R.drawable.order),
+                        painter = painterResource(id = R.drawable.pixelsort),
                         contentDescription = "Sort",
                         modifier = Modifier.size(30.dp)
                     )
@@ -109,13 +120,17 @@ fun NoteListScreen(
                     }
                 )
             }
-            Spacer(modifier = Modifier.height(5.dp))
-            LazyColumn(modifier = Modifier.fillMaxSize()) {
+            Spacer(modifier = Modifier.height(20.dp))
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(2),
+                modifier = Modifier.fillMaxSize()
+            ) {
                 items(state.notes) { note ->
                     NoteItem(
                         note = note,
                         modifier = Modifier
-                            .fillMaxWidth()
+                            .aspectRatio(1f)
+                            .padding(12.dp)
                             .clickable {
                                 navController.navigate(
                                     NoteScreen.AddEditNoteScreen.route +
@@ -129,54 +144,33 @@ fun NoteListScreen(
                                     message = "Note deleted",
                                     actionLabel = "Undo"
                                 )
-                                if(result == SnackbarResult.ActionPerformed) {
+                                if (result == SnackbarResult.ActionPerformed) {
                                     viewModel.onEvent(NoteListEvent.RestoreNote)
                                 }
                             }
                         }
                     )
-                    Spacer(modifier = Modifier.height(16.dp))
+                }
+            }
+            Spacer(modifier = Modifier.height(20.dp))
                 }
             }
         }
-    }
-}
 
 @Composable
 fun NoteItem(
     note: Note,
     modifier: Modifier = Modifier,
-    cornerRadius: Dp = 10.dp,
-    cutCornerSize: Dp = 30.dp,
     onDeleteClick: () -> Unit
 ) {
     Box(
         modifier = modifier
     ) {
         Canvas(modifier = Modifier.matchParentSize()) {
-            val clipPath = Path().apply {
-                lineTo(size.width - cutCornerSize.toPx(), 0f)
-                lineTo(size.width, cutCornerSize.toPx())
-                lineTo(size.width, size.height)
-                lineTo(0f, size.height)
-                close()
-            }
-
-            clipPath(clipPath) {
-                drawRoundRect(
-                    color = Color(note.color),
-                    size = size,
-                    cornerRadius = CornerRadius(cornerRadius.toPx())
-                )
-                drawRoundRect(
-                    color = Color(
-                        ColorUtils.blendARGB(note.color, 0x000000, 0.2f)
-                    ),
-                    topLeft = Offset(size.width - cutCornerSize.toPx(), -100f),
-                    size = Size(cutCornerSize.toPx() + 100f, cutCornerSize.toPx() + 100f),
-                    cornerRadius = CornerRadius(cornerRadius.toPx())
-                )
-            }
+            drawRoundRect(
+                color = Color(note.color),
+                size = size
+            )
         }
         Column(
             modifier = Modifier
@@ -186,26 +180,20 @@ fun NoteItem(
         ) {
             Text(
                 text = note.title,
-                style = MaterialTheme.typography.headlineSmall,
-                color = Background,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = note.content,
                 style = MaterialTheme.typography.bodyLarge,
                 color = Background,
-                maxLines = 10,
-                overflow = TextOverflow.Ellipsis
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                fontFamily = textFont
             )
+
         }
         IconButton(
             onClick = onDeleteClick,
             modifier = Modifier.align(Alignment.BottomEnd)
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.delete),
+                painter = painterResource(id = R.drawable.pixeltrash),
                 contentDescription = "Delete",
                 tint = MaterialTheme.colorScheme.onSurface
             )

@@ -72,7 +72,7 @@ fun AddEditNoteScreen(
                     },
             ) {
                 Icon(
-                    painter = painterResource(id = R.drawable.save),
+                    painter = painterResource(id = R.drawable.pixelsave),
                     contentDescription = "Save",
                     modifier = Modifier.fillMaxSize(),
                     tint = MaterialTheme.colorScheme.onSurface

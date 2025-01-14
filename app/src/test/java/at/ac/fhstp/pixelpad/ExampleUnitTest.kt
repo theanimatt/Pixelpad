@@ -1,4 +1,4 @@
-package at.ac.fhstp.scribbly
+package at.ac.fhstp.pixelpad
 
 import org.junit.Test
 
