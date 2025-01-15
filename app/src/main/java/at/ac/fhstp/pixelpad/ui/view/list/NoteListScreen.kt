@@ -36,6 +36,7 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.sp
 import androidx.core.graphics.ColorUtils
 import at.ac.fhstp.pixelpad.R
 import at.ac.fhstp.pixelpad.data.model.Note
@@ -44,7 +45,7 @@ import at.ac.fhstp.pixelpad.ui.navigation.NoteScreen
 import at.ac.fhstp.pixelpad.ui.theme.Background
 
 val titleFont = FontFamily(
-    Font(R.font.pixelmania)
+    Font(R.font.pixeltwist)
 )
 
 val textFont = FontFamily(
@@ -65,13 +66,13 @@ fun NoteListScreen(
         floatingActionButton = {
             Box(
                 modifier = Modifier
-                    .size(50.dp)
+                    .size(60.dp)
                     .clickable {
                         navController.navigate(NoteScreen.AddEditNoteScreen.route)
                     },
             ) {
                 Icon(
-                    painter = painterResource(id = R.drawable.add),
+                    painter = painterResource(id = R.drawable.plus),
                     contentDescription = "Add"
 
                 )
@@ -90,9 +91,10 @@ fun NoteListScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "PIXELPAD",
-                    style = MaterialTheme.typography.headlineSmall,
-                    fontFamily = titleFont
+                    text = "PixelPad",
+                   // style = MaterialTheme.typography.headlineLarge,
+                    fontFamily = titleFont,
+                    fontSize = 60.sp
                 )
                 IconButton(
                     onClick = {
@@ -102,10 +104,11 @@ fun NoteListScreen(
                     Icon(
                         painter = painterResource(id = R.drawable.pixelsort),
                         contentDescription = "Sort",
-                        modifier = Modifier.size(30.dp)
+                        modifier = Modifier.size(55.dp)
                     )
                 }
             }
+            Spacer(modifier = Modifier.height(25.dp))
             AnimatedVisibility(
                 visible = state.isOrderSectionVisible,
                 enter = fadeIn() + slideInVertically()
@@ -120,7 +123,6 @@ fun NoteListScreen(
                     }
                 )
             }
-            Spacer(modifier = Modifier.height(20.dp))
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
                 modifier = Modifier.fillMaxSize()
@@ -175,14 +177,13 @@ fun NoteItem(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp)
-                .padding(end = 32.dp)
+                .padding(10.dp)
         ) {
             Text(
                 text = note.title,
-                style = MaterialTheme.typography.bodyLarge,
+                style = MaterialTheme.typography.bodyMedium,
                 color = Background,
-                maxLines = 1,
+                maxLines = 3,
                 overflow = TextOverflow.Ellipsis,
                 fontFamily = textFont
             )

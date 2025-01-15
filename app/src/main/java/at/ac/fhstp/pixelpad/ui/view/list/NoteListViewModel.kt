@@ -72,7 +72,7 @@ class NoteListViewModel @Inject constructor(
                     notes = when (noteOrder) {
                         is NoteOrder.Title -> notes.sortedBy { it.title.lowercase() }
                         is NoteOrder.Date -> notes.sortedBy { it.timestamp }
-                        is NoteOrder.Color -> notes.sortedBy { it.color }
+                        is NoteOrder.Color -> notes.sortedBy { it.color}
                         is NoteOrder.ContentLength -> notes.sortedBy { it.content.length }
                     }.let {
                         if (noteOrder.orderType == OrderType.Descending) it.reversed() else it

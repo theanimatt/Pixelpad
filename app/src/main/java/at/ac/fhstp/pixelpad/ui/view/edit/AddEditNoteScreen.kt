@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -66,13 +67,13 @@ fun AddEditNoteScreen(
         floatingActionButton = {
             Box(
                 modifier = Modifier
-                    .size(50.dp)
+                    .size(60.dp)
                     .clickable {
                         viewModel.onEvent(AddEditNoteEvent.SaveNote)
                     },
             ) {
                 Icon(
-                    painter = painterResource(id = R.drawable.pixelsave),
+                    painter = painterResource(id = R.drawable.save),
                     contentDescription = "Save",
                     modifier = Modifier.fillMaxSize(),
                     tint = MaterialTheme.colorScheme.onSurface
@@ -91,23 +92,22 @@ fun AddEditNoteScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(8.dp),
+                    .padding(25.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Note.noteColors.forEach { color ->
                     val colorInt = color.toArgb()
                     Box(
                         modifier = Modifier
-                            .size(50.dp)
-                            .shadow(15.dp, CircleShape)
-                            .clip(CircleShape)
-                            .background(color)
+                            .size(40.dp) // Square size
+                            .shadow(15.dp, RectangleShape) // Apply shadow with square (default RectangleShape)
+                            .background(color) // Set background color
                             .border(
-                                width = 3.dp,
+                                width = 4.dp,
                                 color = if (viewModel.noteColor.value == colorInt) {
                                     Color.Black
                                 } else Color.Transparent,
-                                shape = CircleShape
+                                shape = RectangleShape // Apply border as square
                             )
                             .clickable {
                                 scope.launch {
@@ -123,6 +123,7 @@ fun AddEditNoteScreen(
                     )
                 }
             }
+
             Spacer(modifier = Modifier.height(16.dp))
             TransparentHintTextField(
                 text = titleState.stateText,
