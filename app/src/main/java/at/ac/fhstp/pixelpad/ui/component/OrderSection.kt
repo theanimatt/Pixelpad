@@ -9,7 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import at.ac.fhstp.pixelpad.R
 import at.ac.fhstp.pixelpad.domain.util.NoteOrder
 import at.ac.fhstp.pixelpad.domain.util.OrderType
 
@@ -32,7 +34,7 @@ fun OrderSection(
 
         Column {
             Text(
-                text = "Sort by",
+                text = stringResource(id= R.string.sort),
                 style = MaterialTheme.typography.bodyMedium,
                 color = Color( 0xffffffff),
                 fontFamily = textFont
@@ -42,13 +44,13 @@ fun OrderSection(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 DefaultRadioButton(
-                    text = "Title",
+                    text = stringResource(id= R.string.title),
                     selected = noteOrder is NoteOrder.Title,
                     onSelect = { onOrderChange(NoteOrder.Title(noteOrder.orderType)) }
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 DefaultRadioButton(
-                    text = "Date",
+                    text = stringResource(id= R.string.date),
                     selected = noteOrder is NoteOrder.Date,
                     onSelect = { onOrderChange(NoteOrder.Date(noteOrder.orderType)) }
                 )
@@ -58,20 +60,20 @@ fun OrderSection(
                 modifier = Modifier
             ) {
                 DefaultRadioButton(
-                    text = "Color",
+                    text = stringResource(id= R.string.priority),
                     selected = noteOrder is NoteOrder.Color,
                     onSelect = { onOrderChange(NoteOrder.Color(noteOrder.orderType)) }
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 DefaultRadioButton(
-                    text = "Content Length",
+                    text = stringResource(id= R.string.length),
                     selected = noteOrder is NoteOrder.ContentLength,
                     onSelect = { onOrderChange(NoteOrder.ContentLength(noteOrder.orderType)) }
                 )
             }
             Spacer(modifier = Modifier.height(26.dp))
             Text(
-                text = "Type",
+                text = stringResource(id= R.string.type),
                 style = MaterialTheme.typography.bodyMedium,
                 color = Color( 0xffffffff),
                 fontFamily = textFont
@@ -81,7 +83,7 @@ fun OrderSection(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 DefaultRadioButton(
-                    text = "Ascending",
+                    text = stringResource(id= R.string.asc),
                     selected = noteOrder.orderType is OrderType.Ascending,
                     onSelect = {
                         onOrderChange(noteOrder.copy(OrderType.Ascending))
@@ -89,7 +91,7 @@ fun OrderSection(
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 DefaultRadioButton(
-                    text = "Descending",
+                    text = stringResource(id= R.string.desc),
                     selected = noteOrder.orderType is OrderType.Descending,
                     onSelect = {
                         onOrderChange(noteOrder.copy(OrderType.Descending))
@@ -99,4 +101,3 @@ fun OrderSection(
         }
     }
 }
-

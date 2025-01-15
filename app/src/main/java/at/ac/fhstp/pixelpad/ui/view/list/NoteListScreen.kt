@@ -3,8 +3,6 @@ package at.ac.fhstp.pixelpad.ui.view.list
 import androidx.compose.animation.*
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -16,28 +14,23 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.ui.geometry.CornerRadius
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.drawscope.clipPath
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.sp
-import androidx.core.graphics.ColorUtils
 import at.ac.fhstp.pixelpad.R
 import at.ac.fhstp.pixelpad.data.model.Note
 import at.ac.fhstp.pixelpad.ui.component.OrderSection
@@ -92,7 +85,7 @@ fun NoteListScreen(
             ) {
                 Text(
                     text = "PixelPad",
-                   // style = MaterialTheme.typography.headlineLarge,
+                    // style = MaterialTheme.typography.headlineLarge,
                     fontFamily = titleFont,
                     fontSize = 60.sp
                 )
@@ -155,9 +148,9 @@ fun NoteListScreen(
                 }
             }
             Spacer(modifier = Modifier.height(20.dp))
-                }
-            }
         }
+    }
+}
 
 @Composable
 fun NoteItem(
@@ -169,9 +162,24 @@ fun NoteItem(
         modifier = modifier
     ) {
         Canvas(modifier = Modifier.matchParentSize()) {
+
+            val rectWidth = 420f // width in pixels
+            val rectHeight = 420f // height in pixels
+
+            // Draw the rectangle with a border
+            val borderWidth = 35f // border width in pixels
+            val borderColor = Color(0xff6F7170) // Border color
+
+            drawRoundRect(
+                color = borderColor,
+                size = Size(rectWidth, rectHeight),
+                style = Stroke(width = borderWidth),  // Stroke is used for borders
+                cornerRadius = CornerRadius.Zero  // Optional: Rounded corners
+            )
+
             drawRoundRect(
                 color = Color(note.color),
-                size = size
+                size = Size(rectWidth,rectHeight),
             )
         }
         Column(

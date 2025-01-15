@@ -10,6 +10,13 @@ import androidx.compose.ui.focus.FocusState
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import at.ac.fhstp.pixelpad.R
+
+val noteFont = FontFamily(
+    Font(R.font.dogica)
+)
 
 @Composable
 fun TransparentHintTextField(
@@ -37,7 +44,12 @@ fun TransparentHintTextField(
                 }
         )
         if(isHintVisible) {
-            Text(text = hint, style = textStyle, color = Color.DarkGray)
+            Text(
+                text = hint,
+                style = textStyle,
+                color = Color.DarkGray,
+                fontFamily = noteFont
+            )
         }
     }
 }

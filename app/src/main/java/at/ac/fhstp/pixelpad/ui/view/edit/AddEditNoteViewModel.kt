@@ -15,20 +15,24 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import android.content.Context
+import at.ac.fhstp.pixelpad.R
+import dagger.hilt.android.qualifiers.ApplicationContext
 
 @HiltViewModel
 class AddEditNoteViewModel @Inject constructor(
+    @ApplicationContext context: Context,
     private val noteUseCase: NoteUseCase,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private val _noteTitle: MutableState<NoteTextFieldState> = mutableStateOf(
-        NoteTextFieldState(stateHint = "New Note")
+        NoteTextFieldState(stateHint = context.getString(R.string.noteTitle) )
     )
     val noteTitle: State<NoteTextFieldState> = _noteTitle
 
     private val _noteContent: MutableState<NoteTextFieldState> = mutableStateOf(
-        NoteTextFieldState(stateHint = "Enter text...")
+        NoteTextFieldState(stateHint = context.getString(R.string.noteText))
     )
     val noteContent: State<NoteTextFieldState> = _noteContent
 

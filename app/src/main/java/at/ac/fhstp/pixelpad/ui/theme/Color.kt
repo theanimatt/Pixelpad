@@ -6,7 +6,7 @@ fun colorFromHex(hex: String): Color {
     return Color(android.graphics.Color.parseColor(hex))
 }
 
-val Background = colorFromHex("#2C1D36")
+val Background = colorFromHex("#3D2C6E")
 
 //val Gray = colorFromHex("#747A8A")
 val Priority1 = colorFromHex("#FD6785")
