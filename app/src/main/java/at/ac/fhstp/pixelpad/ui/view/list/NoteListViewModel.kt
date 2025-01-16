@@ -5,6 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import at.ac.fhstp.pixelpad.data.model.Note
+import at.ac.fhstp.pixelpad.data.model.Note.Companion.colorNameMap
 import at.ac.fhstp.pixelpad.domain.usecase.NoteUseCase
 import at.ac.fhstp.pixelpad.domain.util.NoteOrder
 import at.ac.fhstp.pixelpad.domain.util.OrderType
@@ -72,7 +73,7 @@ class NoteListViewModel @Inject constructor(
                     notes = when (noteOrder) {
                         is NoteOrder.Title -> notes.sortedBy { it.title.lowercase() }
                         is NoteOrder.Date -> notes.sortedBy { it.timestamp }
-                        is NoteOrder.Color -> notes.sortedBy { it.color}
+                        is NoteOrder.Color -> notes.sortedBy { colorNameMap[it.color] ?: "" }
                         is NoteOrder.ContentLength -> notes.sortedBy { it.content.length }
                     }.let {
                         if (noteOrder.orderType == OrderType.Descending) it.reversed() else it
@@ -82,4 +83,5 @@ class NoteListViewModel @Inject constructor(
             }
             .launchIn(viewModelScope)
     }
+
 }

@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
@@ -23,6 +24,7 @@ import androidx.navigation.NavController
 import at.ac.fhstp.pixelpad.R
 import at.ac.fhstp.pixelpad.data.model.Note
 import at.ac.fhstp.pixelpad.ui.component.TransparentHintTextField
+import at.ac.fhstp.pixelpad.ui.component.textFont
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -89,6 +91,16 @@ fun AddEditNoteScreen(
         ) {
             Row(
                 modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+            ) {
+                Text(
+                    text = "Select priority",
+                    fontFamily = textFont,
+                    color = Color.Black
+               )
+            }
+            Row(
+                modifier = Modifier
                     .fillMaxWidth()
                     .padding(25.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
@@ -103,8 +115,8 @@ fun AddEditNoteScreen(
                             .border(
                                 width = 4.dp,
                                 color = if (viewModel.noteColor.value == colorInt) {
-                                    Color.Black
-                                } else Color.Transparent,
+                                    Color(0xFF59B429)
+                                } else Color(0xffB5271C),
                                 shape = RectangleShape // Apply border as square
                             )
                             .clickable {

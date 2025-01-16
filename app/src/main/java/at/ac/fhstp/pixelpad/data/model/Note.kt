@@ -1,9 +1,10 @@
 package at.ac.fhstp.pixelpad.data.model
 
+import androidx.compose.ui.graphics.Color
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import at.ac.fhstp.pixelpad.domain.util.NoteOrder
 import at.ac.fhstp.pixelpad.ui.theme.*
+
 
 @Entity(tableName = "note")
 data class Note(
@@ -14,8 +15,23 @@ data class Note(
     @PrimaryKey val id: Int? = null
 ) {
     companion object {
-        val noteColors = listOf(Priority1, Priority2, Priority3, Priority4)
+        // List of note colors
+        val noteColors = listOf(
+            Color(Priority1),
+            Color(Priority2),
+            Color(Priority3),
+            Color(Priority4)
+        )
+
+        // Mapping of color values (as Int) to their corresponding names for sorting
+        val colorNameMap = mapOf(
+            Priority1 to "Priority1",
+            Priority2 to "Priority2",
+            Priority3 to "Priority3",
+            Priority4 to "Priority4"
+        )
     }
 }
 
-class InvalidNoteException(message: String): Exception(message)
+// Custom exception for invalid notes
+class InvalidNoteException(message: String) : Exception(message)

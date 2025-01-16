@@ -1,6 +1,7 @@
 package at.ac.fhstp.pixelpad.domain.usecase
 
 import at.ac.fhstp.pixelpad.data.model.Note
+import at.ac.fhstp.pixelpad.data.model.Note.Companion.colorNameMap
 import at.ac.fhstp.pixelpad.domain.repository.NoteRepository
 import at.ac.fhstp.pixelpad.domain.util.NoteOrder
 import at.ac.fhstp.pixelpad.domain.util.OrderType
@@ -21,7 +22,7 @@ class GetNotes @Inject constructor(
                     when(noteOrder) {
                         is NoteOrder.Title -> notes.sortedBy { it.title.lowercase() }
                         is NoteOrder.Date -> notes.sortedBy { it.timestamp }
-                        is NoteOrder.Color -> notes.sortedBy { it.color }
+                        is NoteOrder.Color -> notes.sortedBy { colorNameMap[it.color] ?: "" }
                         is NoteOrder.ContentLength -> notes.sortedBy { it.content.length }
                     }
                 }
@@ -29,11 +30,12 @@ class GetNotes @Inject constructor(
                     when(noteOrder) {
                         is NoteOrder.Title -> notes.sortedByDescending { it.title.lowercase() }
                         is NoteOrder.Date -> notes.sortedByDescending { it.timestamp }
-                        is NoteOrder.Color -> notes.sortedByDescending { it.color }
+                        is NoteOrder.Color -> notes.sortedByDescending { colorNameMap[it.color] ?: "" }
                         is NoteOrder.ContentLength -> notes.sortedByDescending { it.content.length }
                     }
                 }
             }
         }
     }
+
 }

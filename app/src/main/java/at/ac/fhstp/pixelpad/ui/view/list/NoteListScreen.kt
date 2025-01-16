@@ -14,7 +14,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.border
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -62,11 +61,12 @@ fun NoteListScreen(
                     .size(60.dp)
                     .clickable {
                         navController.navigate(NoteScreen.AddEditNoteScreen.route)
-                    },
+                    }
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.plus),
-                    contentDescription = "Add"
+                    contentDescription = "Add",
+                    tint = Color(0xffCEE5F2)
 
                 )
             }

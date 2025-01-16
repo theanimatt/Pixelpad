@@ -9,8 +9,8 @@ fun colorFromHex(hex: String): Color {
 val Background = colorFromHex("#3D2C6E")
 
 //val Gray = colorFromHex("#747A8A")
-val Priority1 = colorFromHex("#FD6785")
-//val Blue = colorFromHex("#399CAD")
-val Priority4 = colorFromHex("#50FFD0")
-val Priority3 = colorFromHex("#FFE17D")
-val Priority2 = colorFromHex("#FF956F")
+val Priority1 = 0xFFFD6785.toInt()
+val Priority2 = 0xFFFF956F.toInt()
+val Priority3 = 0xFFFFE17D.toInt()
+val Priority4 = 0xFF50FFD0.toInt()
+
