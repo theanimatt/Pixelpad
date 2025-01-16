@@ -10,4 +10,6 @@
     <string name="type">Typ</string>
     <string name="noteTitle">Neue Notiz</string>
     <string name="noteText">Text eingeben</string>
+    <string name="deleted">Notiz gelöscht</string>
+    <string name="undo">Rückgängig</string>
 </resources>

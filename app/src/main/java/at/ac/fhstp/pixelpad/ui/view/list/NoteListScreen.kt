@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.createFontFamilyResolver
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 import at.ac.fhstp.pixelpad.R
@@ -35,6 +36,7 @@ import at.ac.fhstp.pixelpad.data.model.Note
 import at.ac.fhstp.pixelpad.ui.component.OrderSection
 import at.ac.fhstp.pixelpad.ui.navigation.NoteScreen
 import at.ac.fhstp.pixelpad.ui.theme.Background
+import org.w3c.dom.Text
 
 val titleFont = FontFamily(
     Font(R.font.pixeltwist)
@@ -137,7 +139,7 @@ fun NoteListScreen(
                             scope.launch {
                                 val result = snackbarHostState.showSnackbar(
                                     message = "Note deleted",
-                                    actionLabel = "Undo"
+                                    actionLabel = "Undo",
                                 )
                                 if (result == SnackbarResult.ActionPerformed) {
                                     viewModel.onEvent(NoteListEvent.RestoreNote)
@@ -197,9 +199,25 @@ fun NoteItem(
             )
 
         }
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(10.dp)
+                .padding(top = 110.dp)
+        ) {
+            Text(
+                text = note.getFormattedDate(),
+                fontFamily = textFont,
+                color = Background,
+                fontSize = 8.sp
+            )
+        }
         IconButton(
             onClick = onDeleteClick,
             modifier = Modifier.align(Alignment.BottomEnd)
+                .offset(
+                    x = (8).dp
+                )
         ) {
             Icon(
                 painter = painterResource(id = R.drawable.pixeltrash),

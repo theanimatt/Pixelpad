@@ -10,4 +10,6 @@
     <string name="type">Típus</string>
     <string name="noteTitle">Cím</string>
     <string name="noteText">Írja be a szöveget</string>
+    <string name="deleted">Jegyzet törölve</string>
+    <string name="undo">Mégse</string>
 </resources>

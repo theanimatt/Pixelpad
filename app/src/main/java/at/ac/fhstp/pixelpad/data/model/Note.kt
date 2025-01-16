@@ -4,6 +4,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import at.ac.fhstp.pixelpad.ui.theme.*
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 
 @Entity(tableName = "note")
@@ -30,6 +32,10 @@ data class Note(
             Priority3 to "Priority3",
             Priority4 to "Priority4"
         )
+    }
+    fun getFormattedDate(): String {
+        val formatter = SimpleDateFormat("dd MM yyyy, HH:mm", Locale.getDefault())
+        return formatter.format(timestamp)
     }
 }
 

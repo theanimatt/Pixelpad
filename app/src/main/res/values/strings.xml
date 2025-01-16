@@ -10,4 +10,6 @@
     <string name="type">Type</string>
     <string name="noteTitle">Note title</string>
     <string name="noteText">Enter text...</string>
+    <string name="deleted">Note deleted</string>
+    <string name="undo">Undo</string>
 </resources>
