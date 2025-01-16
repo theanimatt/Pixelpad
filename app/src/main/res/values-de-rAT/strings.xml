@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Titel</string>
+    <string name="date">Datum</string>
+    <string name="priority">Priorität</string>
+    <string name="length">Länge</string>
+    <string name="asc">Aufsteigend</string>
+    <string name="desc">Absteigend</string>
+    <string name="sort">Sortieren nach</string>
+    <string name="type">Typ</string>
+    <string name="noteTitle">Neue Notiz</string>
+    <string name="noteText">Text eingeben</string>
+</resources>

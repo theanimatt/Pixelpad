@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Cím</string>
+    <string name="date">Dátum</string>
+    <string name="priority">Prioritás</string>
+    <string name="length">Hossz</string>
+    <string name="asc">Növekvő</string>
+    <string name="desc">Csökkenő</string>
+    <string name="sort">Rendezés</string>
+    <string name="type">Típus</string>
+    <string name="noteTitle">Cím</string>
+    <string name="noteText">Írja be a szöveget</string>
+</resources>
