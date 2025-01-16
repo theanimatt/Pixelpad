@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -94,7 +95,7 @@ fun AddEditNoteScreen(
                     .align(Alignment.CenterHorizontally)
             ) {
                 Text(
-                    text = "Select priority",
+                    text = stringResource(id= R.string.select),
                     fontFamily = textFont,
                     color = Color.Black
                )

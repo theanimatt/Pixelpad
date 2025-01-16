@@ -26,6 +26,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.createFontFamilyResolver
@@ -54,6 +55,9 @@ fun NoteListScreen(
     val state = viewModel.state.value
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
+
+    val deleted = stringResource(id = R.string.deleted)
+    val undo = stringResource(id = R.string.undo)
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -138,8 +142,8 @@ fun NoteListScreen(
                             viewModel.onEvent(NoteListEvent.DeleteNote(note))
                             scope.launch {
                                 val result = snackbarHostState.showSnackbar(
-                                    message = "Note deleted",
-                                    actionLabel = "Undo",
+                                    message = deleted,
+                                    actionLabel = undo,
                                 )
                                 if (result == SnackbarResult.ActionPerformed) {
                                     viewModel.onEvent(NoteListEvent.RestoreNote)

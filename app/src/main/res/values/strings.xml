@@ -12,4 +12,5 @@
     <string name="noteText">Enter text...</string>
     <string name="deleted">Note deleted</string>
     <string name="undo">Undo</string>
+    <string name="select">Select priority</string>
 </resources>

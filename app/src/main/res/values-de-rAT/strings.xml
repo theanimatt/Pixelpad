@@ -12,4 +12,5 @@
     <string name="noteText">Text eingeben</string>
     <string name="deleted">Notiz gelöscht</string>
     <string name="undo">Rückgängig</string>
+    <string name="select">Priorität wählen</string>
 </resources>

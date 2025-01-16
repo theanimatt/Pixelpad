@@ -12,4 +12,5 @@
     <string name="noteText">Írja be a szöveget</string>
     <string name="deleted">Jegyzet törölve</string>
     <string name="undo">Mégse</string>
+    <string name="select">Válassz prioritást</string>
 </resources>
