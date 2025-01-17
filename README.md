@@ -57,14 +57,14 @@ ________________________________________________________________________________
 
 4. Tasks for Participants
 Participants will complete the following tasks during the test:
-  1. Create a Note:
+  - Create a Note:
     - Create a new note with a title, content, and assign it a color/priority.
-  2. Update a Note:
+  - Update a Note:
     - Edit the title and content of an existing note.
     - Change its color/priority.
-  3. Delete a Note:
+  - Delete a Note:
     - Delete a specific note from the list.
-  4. Filter Notes:
+  - Filter Notes:
     - Use filters provided in the filter section.
 
 ____________________________________________________________________________________________
