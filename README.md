@@ -23,54 +23,68 @@ The app can be used by a variety of people of all different age groups. The only
 User Evaluation: 
 
 1. Test Overview
-• Objective:
+  - Objective:
 To evaluate the usability of the note-taking app by testing basic functionality,
 priority settings, and filter options. Feedback will be collected using the SUS
 questionnaire and open-ended suggestions.
-• Participants:
+
+  - Participants:
 5–10 participants representing the target user group (e.g., individuals who regularly
 use smartphones, age group: ~ 15 - 60 y/o).
-• Scope:
+
+  - Scope:
 Participants will perform tasks related to creating, updating, deleting notes, setting
 priorities, and applying filters.
+
+
 2. Test Goals
-1. Assess ease of use for core functionality (create, update, delete notes).
-2. Measure user understanding of priority settings and filter options.
-3. Identify pain points or confusion during the tasks.
-4. Collect user feedback on the overall experience and suggestions for improvement.
+  - Assess ease of use for core functionality (create, update, delete notes).
+  - Measure user understanding of priority settings and filter options.
+  - Identify pain points or confusion during the tasks.
+  - Collect user feedback on the overall experience and suggestions for improvement.
+
+
 3. Test Environment
-• Devices: Android phones running the app.
-• Location: Remote or in-person (based on the availability of users).
-• Materials: SUS questionnaire (digital)
+  - Devices: Android phones running the app.
+  - Location: Remote or in-person (based on the availability of users).
+  - Materials: SUS questionnaire (digital)
+
+
 4. Tasks for Participants
 Participants will complete the following tasks during the test:
-1. Create a Note:
-◦ Create a new note with a title, content, and assign it a color/priority.
-2. Update a Note:
-◦ Edit the title and content of an existing note.
-◦ Change its color/priority.
-3. Delete a Note:
-◦ Delete a specific note from the list.
-5. Filter Notes:
-◦ Use filters provided in the filter section.
+  1. Create a Note:
+    - Create a new note with a title, content, and assign it a color/priority.
+  2. Update a Note:
+    - Edit the title and content of an existing note.
+    - Change its color/priority.
+  3. Delete a Note:
+    - Delete a specific note from the list.
+  4. Filter Notes:
+    - Use filters provided in the filter section.
+
+     
 5. Data Collection Methods
-1. Observation:
-◦ Note any errors, confusion, or unusual behavior.
-2. SUS Questionnaire:
-◦ Administer the System Usability Scale (SUS) to gather usability scores.
-3. Post-Test Feedback:
-◦ Collect open-ended responses for participants' opinions, critiques, and
+  1. Observation:
+    - Note any errors, confusion, or unusual behavior.
+  2. SUS Questionnaire:
+    - Administer the System Usability Scale (SUS) to gather usability scores.
+  3. Post-Test Feedback:
+    - Collect open-ended responses for participants' opinions, critiques, and
 suggestions.
+
+
 6. Metrics and Analysis
-Quantitative Data:
-• Completion Rate: Percentage of tasks completed successfully.
-• SUS Score: Usability score based on the questionnaire (0–100 scale).
-Qualitative Data:
-• Observed user behaviour (e.g., confusion points, errors).
-• Suggestions and critiques from open-ended feedback.
-8. Deliverables
-• Summary of findings (quantitative and qualitative).
-• Recommendations for improving usability based on participant feedback and
+  - Quantitative Data:
+    - Completion Rate: Percentage of tasks completed successfully.
+    - SUS Score: Usability score based on the questionnaire (0–100 scale).
+- Qualitative Data:
+  - Observed user behaviour (e.g., confusion points, errors).
+  - Suggestions and critiques from open-ended feedback.
+ 
+  
+7. Deliverables
+  - Summary of findings (quantitative and qualitative).
+  - Recommendations for improving usability based on participant feedback and
 identified issues.
 
 
