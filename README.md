@@ -70,11 +70,11 @@ Participants will complete the following tasks during the test:
 ____________________________________________________________________________________________
      
 5. Data Collection Methods
-  1. Observation:
+  - Observation:
     - Note any errors, confusion, or unusual behavior.
-  2. SUS Questionnaire:
+  - SUS Questionnaire:
     - Administer the System Usability Scale (SUS) to gather usability scores.
-  3. Post-Test Feedback:
+  - Post-Test Feedback:
     - Collect open-ended responses for participants' opinions, critiques, and
 suggestions.
 
