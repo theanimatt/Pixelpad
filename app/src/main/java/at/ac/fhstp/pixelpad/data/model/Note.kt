@@ -34,7 +34,7 @@ data class Note(
         )
     }
     fun getFormattedDate(): String {
-        val formatter = SimpleDateFormat("dd MM yyyy, HH:mm", Locale.getDefault())
+        val formatter = SimpleDateFormat("dd MM yyyy\n HH:mm", Locale.getDefault())
         return formatter.format(timestamp)
     }
 }

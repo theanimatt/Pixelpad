@@ -87,7 +87,8 @@ fun OrderSection(
                     selected = noteOrder.orderType is OrderType.Ascending,
                     onSelect = {
                         onOrderChange(noteOrder.copy(OrderType.Ascending))
-                    }
+                    },
+
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 DefaultRadioButton(

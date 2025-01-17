@@ -23,6 +23,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import at.ac.fhstp.pixelpad.R
 
 val textFont = FontFamily(
@@ -62,7 +63,7 @@ fun DefaultRadioButton(
 
         Text(
             text = text,
-            style = MaterialTheme.typography.bodySmall,
+            fontSize = 11.sp,
             fontFamily = textFont,
             color = if (selected) MaterialTheme.colorScheme.primary
             else MaterialTheme.colorScheme.onBackground // Change text color based on selection

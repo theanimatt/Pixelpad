@@ -103,7 +103,7 @@ fun NoteListScreen(
                     Icon(
                         painter = painterResource(id = R.drawable.pixelsort),
                         contentDescription = "Sort",
-                        modifier = Modifier.size(55.dp)
+                        modifier = Modifier.size(70.dp)
                     )
                 }
             }
@@ -207,13 +207,15 @@ fun NoteItem(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(10.dp)
-                .padding(top = 110.dp)
+                .offset(
+                    y = 80.dp
+                )
         ) {
             Text(
                 text = note.getFormattedDate(),
                 fontFamily = textFont,
                 color = Background,
-                fontSize = 8.sp
+                fontSize = 9.sp
             )
         }
         IconButton(

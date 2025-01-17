@@ -12,5 +12,5 @@ val Background = colorFromHex("#3D2C6E")
 val Priority1 = 0xFFFD6785.toInt()
 val Priority2 = 0xFFFF956F.toInt()
 val Priority3 = 0xFFFFE17D.toInt()
-val Priority4 = 0xFF50FFD0.toInt()
+val Priority4 = 0xFFF8F7F9.toInt()
 
