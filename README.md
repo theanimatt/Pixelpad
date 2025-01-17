@@ -20,6 +20,8 @@ Users can create, edit and delete notes. Additionally users can assign one of 5 
 The app can be used by a variety of people of all different age groups. The only requirement is that users must be familiar with a smart device, at least on a basic level. 
 (Estimated target user age group: 14 - 65 y/o)
 
+____________________________________________________________________________________________
+
 User Evaluation: 
 
 1. Test Overview
@@ -36,6 +38,7 @@ use smartphones, age group: ~ 15 - 60 y/o).
 Participants will perform tasks related to creating, updating, deleting notes, setting
 priorities, and applying filters.
 
+____________________________________________________________________________________________
 
 2. Test Goals
   - Assess ease of use for core functionality (create, update, delete notes).
@@ -43,12 +46,14 @@ priorities, and applying filters.
   - Identify pain points or confusion during the tasks.
   - Collect user feedback on the overall experience and suggestions for improvement.
 
+____________________________________________________________________________________________
 
 3. Test Environment
   - Devices: Android phones running the app.
   - Location: Remote or in-person (based on the availability of users).
   - Materials: SUS questionnaire (digital)
 
+____________________________________________________________________________________________
 
 4. Tasks for Participants
 Participants will complete the following tasks during the test:
@@ -62,6 +67,7 @@ Participants will complete the following tasks during the test:
   4. Filter Notes:
     - Use filters provided in the filter section.
 
+____________________________________________________________________________________________
      
 5. Data Collection Methods
   1. Observation:
@@ -72,6 +78,7 @@ Participants will complete the following tasks during the test:
     - Collect open-ended responses for participants' opinions, critiques, and
 suggestions.
 
+____________________________________________________________________________________________
 
 6. Metrics and Analysis
   - Quantitative Data:
@@ -81,11 +88,14 @@ suggestions.
   - Observed user behaviour (e.g., confusion points, errors).
   - Suggestions and critiques from open-ended feedback.
  
+____________________________________________________________________________________________
   
 7. Deliverables
   - Summary of findings (quantitative and qualitative).
   - Recommendations for improving usability based on participant feedback and
 identified issues.
+
+____________________________________________________________________________________________
 
 
 ![Képernyőkép 2025-01-12 105217](https://github.com/user-attachments/assets/a0d63ce2-1a39-4d20-9ea6-5c1506d04cd6)
